@@ -3,7 +3,12 @@ const app = express();
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocs = require('./swagger'); // Importar o arquivo de configuração
 //rota
-const UserRouter = require('./Routers/UserRouter');
+const bodyParser = require('body-parser');
+
+const UserRouter = require('./Routers/UserRouter'); 
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json())
 
 
 app.use('/api',UserRouter)
