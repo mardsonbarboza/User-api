@@ -19,7 +19,7 @@ class userController{
         }
     }
     async delete(req,res){
-        var id  = req.body.id
+        var id  = req.params.id
         try {
             var idUser = await User.findById(id);
             if (!idUser) {
