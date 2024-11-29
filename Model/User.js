@@ -10,7 +10,9 @@ class User{
     async findById(id){
         return await knex.select('*').where({id:id}).table('users')
     }
-
+    async deleteUser(id){
+        return await knex.delete().where({id:id}).table('users')
+    }
 
 }
 
