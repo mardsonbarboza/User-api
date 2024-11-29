@@ -7,6 +7,9 @@ class User{
     async create(nome,email){
         return await knex.insert({nome,email}).table('users')
     }
+    async findById(id){
+        return await knex.select('*').where({id:id}).table('users')
+    }
 
 
 }
