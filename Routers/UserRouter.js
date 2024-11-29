@@ -74,6 +74,44 @@
  *       500:
  *         description: Erro interno do servidor
  */
+/**
+ * @swagger
+ * /user:
+ *   delete:
+ *     sumary:Deleção de usuario
+ *     description: endpoint para delete usuario apartir de um id do parametro
+ *     tags:
+ *       - Users
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         aplication/json:
+ *           schema:
+ * 
+ */
+/**
+ * @swagger
+ * /user/{id}:
+ *   delete:
+ *     summary: Deleta um usuário
+ *     description: Endpoint para excluir um usuário com base no ID fornecido como parâmetro.
+ *     tags:
+ *       - Users
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: ID único do usuário a ser deletado
+ *     responses:
+ *       200:
+ *         description: Usuário deletado com sucesso
+ *       404:
+ *         description: Usuário não encontrado
+ *       500:
+ *         description: Erro interno do servidor
+ */
 
 const express = require('express');
 const router = express.Router();
@@ -81,5 +119,5 @@ const UserController = require('../Controller/userController');
 
 router.get('/users', UserController.findUsers);
 router.post('/user', UserController.newUser);
-
+router.delete('/user/:id', UserController.delete);
 module.exports = router;
