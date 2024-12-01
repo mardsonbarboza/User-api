@@ -33,7 +33,8 @@ class userController{
         }
     }
     async uptdateUser(req,res){
-        var {id,nome,email} = req.body;
+        var {nome,email} = req.body;
+        var id = req.params;
         try {
             var verifyUser = await User.findById(id);
             if (!verifyUser) {
