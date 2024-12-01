@@ -32,6 +32,20 @@ class userController{
             res.status(500).json(error)
         }
     }
+    async uptdateUser(req,res){
+        var {id,nome,email} = req.body;
+        try {
+            var verifyUser = await User.findById(id);
+            if (!verifyUser) {
+                await User.update(id,nome,email);
+                res.status(200).json({msg:'Usuario atualizado com sucesso'});
+            } else {
+                res.status(404).json({msg:'Erro ao atualizar usuario'})
+            }
+        } catch (error) {
+            res.status(500).json(error)
+        }
+    }
 }
 
 module.exports = new userController();
