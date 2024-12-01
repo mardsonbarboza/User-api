@@ -11,12 +11,12 @@ class userController {
     }
 
     async newUser(req, res) {
-        const { nome, email, senha } = req.body;
+        const { name, email, password } = req.body;
         try {
-            const user = await User.create({ nome, email,senha});
-            res.status(201).json(user);
+            await User.create({ name, email,password});
+            res.status(201).json({msg:'cadastrado com sucesso'});
         } catch (error) {
-            res.status(500).json({ error: 'Erro ao criar usuário' });
+            res.status(500).json({ error: error });
         }
     }
 
