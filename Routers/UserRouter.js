@@ -74,21 +74,7 @@
  *       500:
  *         description: Erro interno do servidor
  */
-/**
- * @swagger
- * /user:
- *   delete:
- *     sumary:Deleção de usuario
- *     description: endpoint para delete usuario apartir de um id do parametro
- *     tags:
- *       - Users
- *     requestBody:
- *       required: true
- *       content:
- *         aplication/json:
- *           schema:
- * 
- */
+
 /**
  * @swagger
  * /user/{id}:
