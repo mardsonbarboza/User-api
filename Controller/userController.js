@@ -37,13 +37,13 @@ class userController {
 
     async uptdateUser(req, res) {
         const id = req.params.id;
-        const { nome, email } = req.body;
+        const { name, email, password} = req.body;
         try {
             const user = await User.findById(id);
             if (!user) {
                 res.status(404).json({ msg: 'Usuário não encontrado' });
             } else {
-                await User.update({ id, nome, email });
+                await User.update({ id, name, email, password });
                 res.status(200).json({ msg: 'Usuário atualizado com sucesso' });
             }
         } catch (error) {

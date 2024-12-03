@@ -4,7 +4,8 @@ class User{
     async findAll(){
         return await knex.select('*').table('users');
     }async create(name,email,password){
-        return await knex.insert({name,email,password,created_at:knex.fn.now(), updated_at:knex.fn.now()}).table('users');
+    
+        return await knex.insert(name,email,password).table('users');
     }
     async findById(id){
         return await knex.select('*').where({id:id}).table('users');
@@ -12,8 +13,8 @@ class User{
     async deleteUser(id){
         return await knex.delete().where({id:id}).table('users');
     }
-    async update(id,nome, email){
-        return await knex.update({nome,email}).table('users').where(id);
+    async update(id,name, email,password){
+        return await knex.update({name,email,password}).table('users').where(id);
     }
 }
 
