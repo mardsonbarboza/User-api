@@ -1,17 +1,7 @@
 # API de Gerenciamento de Usuários
 
 Esta API é uma implementação simples de gerenciamento de usuários utilizando Node.js, Express e Knex para interagir com um banco de dados SQL.
-## Como Rodar o Projeto
 
-### Pré-requisitos
-- Node.js instalado em sua maquina
-- Banco de dados configurado sendo MySQL
-### Passos
-1. Clone o repositório:
-```
-git clone http:s
-```
-3. 
 ## Funcionalidades
 
 A API oferece as seguintes funcionalidades para gerenciamento de usuários:
@@ -79,3 +69,41 @@ A API oferece as seguintes funcionalidades para gerenciamento de usuários:
   "password": 123456
 }
 ```
+## Como Rodar o Projeto
+
+### Pré-requisitos
+- Node.js instalado em sua maquina
+- Banco de dados configurado sendo MySQL
+### Passos
+1. Clone o repositório:
+```bash
+git clone https://github.com/mardsonbarboza/User-api.git
+```
+2. Acesse o diretório do projeto:
+```
+cd User-api
+```
+3. Instale as dependências:
+```bash
+npm install
+```
+4. Inicie o servidor
+```bash
+npx nodemon
+```
+A API esta diponivel na porta 8080. Você pode acessar os endpoinst em http://localhost:8080/api
+
+## Documentação da API
+A documentação da API está disponível via Swagger UI, onde você pode visualizar e testar as rotas diretamente. Se você estiver rodando o servidor localmente na porta 8080, acesse a documentação pelo seguinte link:
+```
+http://localhost:8080/api-docs
+
+```
+## Tecnologias Utilizadas
+- Node.js
+- Express
+- Knex.js
+- Swagger
+- MySQL2
+
+  
