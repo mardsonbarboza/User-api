@@ -4,6 +4,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocs = require('./swagger'); // Importar o arquivo de configuração
 //rota
 const bodyParser = require('body-parser');
+require('dotenv').config();
 
 const UserRouter = require('./Routers/UserRouter'); 
 
