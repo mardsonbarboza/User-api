@@ -11,17 +11,21 @@
  *         id:
  *           type: integer
  *           description: ID único do usuário
- *         nome:
+ *         name:
  *           type: string
  *           description: Nome do usuário
  *         email:
  *           type: string
  *           format: email
  *           description: Email do usuário
+ *         password:
+ *           type: string
+ *           description: Senha do usuario  
  *       example:
  *         id: 1
- *         nome: João Silva
+ *         name: João Silva
  *         email: joao.silva@email.com
+ *         password: 123456
  */
 
 /**
@@ -60,8 +64,9 @@
  *           schema:
  *             $ref: '#/components/schemas/User'
  *           example:
- *             nome: Ana Costa
+ *             name: Ana Costa
  *             email: ana.costa@email.com
+ *             password: 123456
  *     responses:
  *       201:
  *         description: Usuário criado com sucesso
@@ -120,15 +125,19 @@
  *           schema:
  *             type: object
  *             properties:
- *               nome:
+ *               name:
  *                 type: string
  *                 description: Nome atualizado do usuário
- *               senha:
+ *               email:
+ *                 type: String
+ *                 description: Email atualizado do usuario
+ *               password:
  *                 type: string
  *                 description: Senha atualizada do usuário
  *             example:
- *               nome: Maria Silva
- *               senha: novaSenha123
+ *               name: Maria Silva
+ *               email: test@email.com
+ *               password: novaSenha123
  *     responses:
  *       200:
  *         description: Usuário atualizado com sucesso
